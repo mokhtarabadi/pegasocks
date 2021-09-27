@@ -13,4 +13,4 @@ android_cmake_command \
 
 "$CMAKE/bin/cmake" --build . --config Release
 
-$STRIP -s pegas -o "$OUTPUT_DIR/libpegas.so"
+cp libpegasocks.a "$OUTPUT_DIR/"

@@ -19,6 +19,10 @@
 #include "server/manager.h"
 #include "server/helper.h"
 
+#ifdef __ANDROID__
+#include "pegas.h"
+#endif
+
 #define MAX_LOG_MPSC_SIZE 64
 
 #ifndef PGS_VERSION
@@ -140,7 +144,11 @@ static int init_control_fd(const pgs_config_t *config, int *fd)
 	return err;
 }
 
+#ifdef __ANDROID__
+int start_pegas(int argc, char **argv)
+#else
 int main(int argc, char **argv)
+#endif
 {
 	signal(SIGPIPE, SIG_IGN);
 
