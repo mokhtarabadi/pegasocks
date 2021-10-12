@@ -1,5 +1,6 @@
 #!/bin/bash
 
+export ANDROID_USE_SHARED_LIBC=ON
 . universal-android-toolchain/toolchain.sh "$@"
 
 build_libevent "OFF" "ON"
@@ -13,4 +14,4 @@ android_cmake_command \
 
 "$CMAKE/bin/cmake" --build . --config Release
 
-cp libpegasocks.a "$OUTPUT_DIR/"
+cp libpegasocks.so "$OUTPUT_DIR/"

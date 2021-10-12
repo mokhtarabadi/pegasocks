@@ -247,7 +247,7 @@ if (NOT ${CMAKE_SYSTEM_NAME} MATCHES "Android")
 endif()
 
 if (${CMAKE_SYSTEM_NAME} MATCHES "Android")
-  add_library(pegasocks STATIC ${PEGAS_SOURCES} ${THIRDPARTY_SOURCES})
+  add_library(pegasocks SHARED ${PEGAS_SOURCES} ${THIRDPARTY_SOURCES})
   target_link_libraries(pegasocks ${THIRDPARTY_LIBS})
 else()
   add_executable(pegas ${PEGAS_SOURCES} ${THIRDPARTY_SOURCES})

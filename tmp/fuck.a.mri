@@ -1,0 +1,4 @@
+create /libfuck.a.a
+addlib /lib/home/mohammad/Develop/Projects/pegasocks/sysroot/arm64-v8a/lib/libevent.a.a
+save
+end
