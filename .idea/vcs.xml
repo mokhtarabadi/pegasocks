@@ -5,5 +5,6 @@
     <mapping directory="$PROJECT_DIR$/3rd-party/ipset" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/3rd-party/libcork" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/3rd-party/parson" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/universal-android-toolchain" vcs="Git" />
   </component>
 </project>

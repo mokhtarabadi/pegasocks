@@ -20,5 +20,14 @@ android_cmake_command \
 "$CMAKE/bin/cmake" --build . --target install
 
 # I know it's ugly, but works!
-cd $CURRENT_DIR
-cp -r $SYSROOT/usr/{include,lib} $OUTPUT_DIR/
+PEGASOCKS_ANDROID_CPP_DIR=$HOME/Develop/Projects/pegasocks-android/app/src/main/cpp/prebuilt/
+
+mkdir -p $PEGASOCKS_ANDROID_CPP_DIR/include/$ABI/event2
+mkdir -p $PEGASOCKS_ANDROID_CPP_DIR/lib/$ABI
+
+rsync -av $SYSROOT/usr/include/ $PEGASOCKS_ANDROID_CPP_DIR/include
+mv $PEGASOCKS_ANDROID_CPP_DIR/include/event2/event-config.h $PEGASOCKS_ANDROID_CPP_DIR/include/$ABI/event2
+
+cp -r $SYSROOT/usr/lib/libpegas.a $PEGASOCKS_ANDROID_CPP_DIR/lib/$ABI
+cp -r $SYSROOT/usr/lib/libevent{,_mbedtls}.a $PEGASOCKS_ANDROID_CPP_DIR/lib/$ABI
+cp -r $SYSROOT/usr/lib/libmbed*.a $PEGASOCKS_ANDROID_CPP_DIR/lib/$ABI
